@@ -50,4 +50,8 @@ def getTravelSpots():
     
     connection.close()
     
-    return jsonify(places)
+    res = jsonify(places)
+
+    res.headers.add("Access-Control-Allow-Origin", "*")
+
+    return res
