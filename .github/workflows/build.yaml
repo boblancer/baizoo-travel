@@ -2,7 +2,7 @@ name: Push to docker
 on:
   push:
     branches:
-      - master
+      - production
 jobs:
   build:
     runs-on: ubuntu-latest
