@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
-from .query import getPlaces
+from query import getPlaces
 app = Flask(__name__)
-    
+
 @app.route('/hello')
 def hello():
     return "hello"
@@ -20,7 +20,6 @@ def getTravelSpots():
 
     if search_range is None:
         search_range = 3
-    print(tup)
     
     places = getPlaces(categories, tup)
     
@@ -29,3 +28,6 @@ def getTravelSpots():
     res.headers.add("Access-Control-Allow-Origin", "*")
 
     return res
+
+if  __name__ == '__main__':
+    app.run(host="0.0.0.0")
