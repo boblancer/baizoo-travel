@@ -53,11 +53,9 @@ class ApiTest(unittest.TestCase):
         status_code = response.status_code
         self.assertEqual(status_code, 200)
     
-    @patch('getPlaces')
-    def test(self, mock_method):
+    def test(self):
         tester = app.test_client(self)
         response = tester.get("/travel/spots?lat=13.783142&long=100.505866")
-        mock_method.getPlaces.return_value = []
-        print(response.json)
+        self.assertEqual(status_code, 200)
 if __name__ == "__main__" :
     unittest.main()
