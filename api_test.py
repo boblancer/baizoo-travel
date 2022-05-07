@@ -1,7 +1,5 @@
 from main import app;
 import unittest
-from unittest.mock import MagicMock
-from mock import patch
 
 r = [
     {
